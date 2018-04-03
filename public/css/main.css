@@ -1,0 +1,235 @@
+html, body {
+    height: 100%;
+}
+.header{
+    height:auto;
+}
+.main{
+    overflow: auto;
+    padding-bottom: 20px;
+}
+.footer{
+    position: relative;
+    height: auto;
+}
+/* main menu */
+.main-menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+.main-menu-item{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+}
+.main-menu-item a {
+    display: block;
+    height: 50px;
+    padding: 0px 15px;
+    color: rgb(143, 142, 142);
+}
+.main-menu-item.active a{
+    color: rgb(255, 255, 255);
+}
+.main-menu-item a:hover{
+    background: rgb(8, 8, 8);
+    color: #fff;
+}
+/* main logo */
+.main-logo img{
+    max-height: 50px;
+    position: absolute;
+}
+.main-logo{
+    padding: 1px;
+}
+header{
+    border-bottom:1px solid #ccc;
+    background: #5E4485;
+}
+/* Main page picture with button */
+.main-container {
+    position: relative;
+    width: 100%;
+}
+.btn-contact{
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 22px;
+    background: #5E4485;
+    border: 2px solid #fff;
+}
+.btn-contact:hover {
+    color: #5E4485;
+    background: #fff;
+    border: 2px solid #5E4485;
+}
+.main-container .btn-contact {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 5px;
+}
+.main-container .hi {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: rgb(253, 253, 253);
+    width: 100%;
+    height: 100px;
+}
+.hi{
+    font-family: "Lobster", serif;
+    font-size: 48px;
+    line-height: 1.25;
+    letter-spacing: -.61px;
+    text-align: center;
+}
+.slider img{
+    max-width: 100%;
+}
+/* main article pictures */
+.small-article img{
+    max-width: 100%;
+}
+.gray-cat img{
+    max-width: 100%;
+    filter: grayscale(100%);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+.gray-cat img:hover{
+    filter: grayscale(0%);
+}
+.spacing-row{
+    padding: 10px 0px;
+}
+main{
+    border-bottom: 1px solid #333;
+}
+/* articles numbers */
+.page-numbers{
+    float: right;
+    padding: 10px 0px;
+}
+.paging{
+    list-style: none;
+    float: right;
+    margin: 0px;
+    padding: 0px;
+}
+.paging li{
+    float: left;
+    margin: 0 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+/* article 1,2,3 */
+.spacing-bottom{
+    padding: 0px 0px 10px 0px;
+}
+.article1:visited, .article1:link{
+    color: #333;
+}
+.article2:visited, .article2:link{
+    color: #333;
+}
+.article3:visited, .article3:link{
+    color: #333;
+}
+/* chat */
+.chat-box input{
+    width: 100%;
+    height: 400px;
+}
+.username, .chat-box{
+    font-weight: bold;
+    color: #333;
+}
+.username label{
+    margin-bottom: 0px;
+}
+.username input{
+    width: 120px;
+    margin-bottom: 0px;
+}
+.username textarea{
+    height: 80px;
+    width: 100%;
+}
+.btn{
+    width: 100%;
+    text-align: center;
+}
+.chat-main-window{
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+.chat-message{
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+.chat-message:first-child{
+    border-top: none;
+}
+.chat-message h5 em{
+    color: #ccc;
+    font-size: 12px;
+    font-style: normal; 
+}
+.chat-message-form{
+    padding: 10px;
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    overflow: hidden;
+}
+#chat-username-input{
+    width: 300px;
+}
+#chat-send-message-button{
+    margin-top: 40px;
+}
+/* about us */
+.map-contacts{
+    padding: 0px 10px 10px 0px;
+}
+.contacts{
+    padding: 0px;
+}
+h5{
+    font-weight: bold;
+}
+.tab-img{
+    width: 100%;
+}
+#map{
+    height: 300px;
+    width: 300px;
+}
+/* breadcrumbs */
+.breadcrumb{
+    padding: 8px 0px;
+}
+/* underline */
+hr{
+    border-top: 1px solid rgb(10, 9, 9);
+}
+/* chat and register windows */
+.form-group input, .form-group select{
+    height: 34px;
+    width: 230px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
