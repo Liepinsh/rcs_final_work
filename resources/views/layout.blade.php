@@ -64,7 +64,7 @@
 
 <!-- ----------script for chat---------- -->
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script>
+<!-- <script>
     function initializeChat(elID) {
         const chatPlaceholder = document.getElementById(elID);
         window.t = chatPlaceholder;
@@ -101,7 +101,7 @@
         }
     }
     initializeChat('chat');
-</script>
+</script> -->
 
 
 <!-- ----------Script for fancybox images in article---------- -->

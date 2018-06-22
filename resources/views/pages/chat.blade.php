@@ -42,14 +42,16 @@
 
 @section('scripts')
 <script>
-//pārnest visu
-    const messageInput = document.querySelector('#chat-text-input');
-    const messageAuthorInput = document.querySelector('#chat-username-input');
-    const messageSendButton = document.querySelector('#chat-send-message-button');
-    const chatWindow = document.querySelector('#chat-window');
-    const chatMessages = [];
+    function initializeChat(elID) {
+        const chatPlaceholder = document.getElementById(elID);
+        window.t = chatPlaceholder;
+        const messageInput = document.querySelector('#chat-text-input');
+        const messageAuthorInput = document.querySelector('#chat-username-input');
+        const messageSendButton = document.querySelector('#chat-send-message-button');
+        const chatWindow = document.querySelector('#chat-window');
+        const chatMessages = [];
 
-    $.getJSON('/chat/get-messages', function(resp){
+        $.getJSON('/chat/get-messages', function(resp){
         for (var index = 0; index < resp.length; index++){
             var element = resp[index];
             console.log(element);
@@ -71,5 +73,68 @@
             chatWindow.innerHTML += messageMarkup;                         
         }
     })
+
+        messageSendButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (!messageAuthorInput.value.length || !messageInput.value.length) {
+                alert('Username and Text needed, to participate in chat');
+                return;
+            }
+            var newAdd = {
+                username: messageAuthorInput.value,
+                text: messageInput.value,
+                date: new Date()
+            }
+            chatMessages.push(newAdd);
+            $.post('/chat/save-message', newAdd, function(res){
+                console.log(res)
+            });
+            populateMessageWindow(chatMessages)
+        })
+        function populateMessageWindow(messageArray) {
+            let message = messageArray[messageArray.length - 1];
+            let messageMarkup = `<div class="chat-message">
+                                    <h5>${ message.username } <em>${ message.date }</em></h5>
+                                    <p>${ message.text }</p>
+                                </div>`;
+            chatWindow.innerHTML += messageMarkup;                         
+        }
+    }
+    initializeChat('chat');
 </script>
+
+
+<script>
+// OLD
+//pārnest visu
+//     const messageInput = document.querySelector('#chat-text-input');
+//     const messageAuthorInput = document.querySelector('#chat-username-input');
+//     const messageSendButton = document.querySelector('#chat-send-message-button');
+//     const chatWindow = document.querySelector('#chat-window');
+//     const chatMessages = [];
+
+//     $.getJSON('/chat/get-messages', function(resp){
+//         for (var index = 0; index < resp.length; index++){
+//             var element = resp[index];
+//             console.log(element);
+//             var newAdd = {
+//                 username: element.username,
+//                 text: element.text,
+//                 date: element.created_at
+//             }
+//             chatMessages.push(newAdd);
+//             populateMessageWindow(chatMessages)
+            
+//         }
+//         function populateMessageWindow(messageArray) {
+//             let message = messageArray[messageArray.length - 1];
+//             let messageMarkup = `<div class="chat-message">
+//                                     <h5>${ message.username } <em>${ message.date }</em></h5>
+//                                     <p>${ message.text }</p>
+//                                 </div>`;
+//             chatWindow.innerHTML += messageMarkup;                         
+//         }
+//     })
+// </script>
+
 @endsection

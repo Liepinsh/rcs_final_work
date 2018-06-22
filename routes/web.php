@@ -37,5 +37,5 @@ Route::get('/about-us', function () {
 });
 Route::post('/register', 'AccountController@storeUser');
 
-Route::post('/chat/save-message', 'AccountController@saveChatMassage');
+Route::post('/chat/save-message', 'AccountController@saveChatMessage');
 Route::get('/chat/get-messages', 'AccountController@getChatMessages');
